@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Farmacia.COMMON.Entidades
 {
-    public class Producto
+    public class Producto:Base
     {
         public string NombreProducto { get; set; }
         public string PrecioVenta { get; set; }

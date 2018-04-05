@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Farmacia.COMMON.Entidades
 {
-    public class Categorias:Base
+    public abstract class Base
     {
-        public string nombreCategoria { get; set; }
+        public string Id { get; set; }
     }
 }

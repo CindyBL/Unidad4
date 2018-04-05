@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Farmacia.COMMON.Entidades
 {
-    public class Persona
+    public class Persona:Base
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }

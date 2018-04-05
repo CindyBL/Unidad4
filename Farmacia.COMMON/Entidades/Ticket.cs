@@ -4,11 +4,12 @@ using System.Text;
 
 namespace Farmacia.COMMON.Entidades
 {
-    public class Ticket
+    public class Ticket:Base
     {
         public DateTime FechaHora { get; set; }
         public List<Producto> Productos { get; set; }
-        public string Usuario { get; set; }
+        public Clientes Cliente { get; set; }
+        public Empleado Encargado { get; set; }
         public string Total { get; set; }
     }
 }
