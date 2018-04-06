@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiteDB, Version=4.1.2.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.4.1.2\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -127,6 +130,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -156,6 +160,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\fondo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Farmacia.BIZ\Farmacia.BIZ.csproj">
+      <Project>{fc0afe65-508b-4c1e-b229-a53367814009}</Project>
+      <Name>Farmacia.BIZ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Farmacia.COMMON\Farmacia.COMMON.csproj">
+      <Project>{39eb93fe-1875-4d8f-a9ab-ef7688e637a7}</Project>
+      <Name>Farmacia.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Farmacia.DAL\Farmacia.DAL.csproj">
+      <Project>{29d1abe0-aa83-490e-861b-5c555679ecf4}</Project>
+      <Name>Farmacia.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

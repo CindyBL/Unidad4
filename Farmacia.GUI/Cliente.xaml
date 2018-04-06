@@ -32,7 +32,7 @@
         <TextBox x:Name="txbTelefono" Grid.Column="3" Grid.Row="2" Foreground="#FF3AA21B" Background="#FF0F0F0F" FontSize="16"/>
         <Label Grid.Column="2" Grid.Row="0" Foreground="#FF6ACF15" Margin="9,0,0,0" FontSize="16" Content="Apellido:"/>
         <TextBox x:Name="txbApellido" Grid.Column="3" Grid.Row="0" Foreground="#FF40D315" Background="#FF191818" FontSize="16"/>
-        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="3" Margin="64,5,0,247" FontSize="8" Foreground="#FF20D330" HorizontalAlignment="Left" Width="42" Grid.RowSpan="2">
+        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="3" Margin="64,5,0,247" FontSize="8" Foreground="#FF20D330" HorizontalAlignment="Left" Width="42" Grid.RowSpan="2" Click="btnNuevo_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/nuevo.png"/>
             </Button.Background>
@@ -57,7 +57,7 @@
                 <ImageBrush ImageSource="Imagenes/cancelar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnRegresar" Grid.Row="4" Margin="11,202,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="3">
+        <Button x:Name="btnRegresar" Grid.Row="4" Margin="11,229,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="3" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>

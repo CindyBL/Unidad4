@@ -17,7 +17,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Categorias" x:Name="btnCategoria" Grid.Column="0" Grid.Row="0" Margin="129,117,127,44" Foreground="#FF40AA28">
+        <Button Content="Categorias" x:Name="btnCategoria" Grid.Column="0" Grid.Row="0" Margin="129,117,127,44" Foreground="#FF40AA28" Click="btnCategoria_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -25,7 +25,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button  Content="Productos" x:Name="btnProducto" Grid.Column="0" Grid.Row="1" Margin="129,43,127,123" Foreground="#FF44BB29">
+        <Button  Content="Productos" x:Name="btnProducto" Grid.Column="0" Grid.Row="1" Margin="129,43,127,123" Foreground="#FF44BB29" Click="btnProducto_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -33,7 +33,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnRegresar" Grid.Row="1" Margin="268,174,0,0" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="btnRegresar" Grid.Row="1" Margin="268,174,0,0" RenderTransformOrigin="0.5,0.5" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>

@@ -35,8 +35,8 @@
         <TextBox x:Name="txbPresentacion" Grid.Column="1" Grid.Row="2" Margin="0,0,10,28" Background="#FF0F0E0E" Foreground="#FF48BD1C"/>
         <TextBox x:Name="txbDescripcion" Grid.Column="3" Grid.Row="0" Margin="0,13,10,15" Background="#FF1F1D1D" Foreground="#FF50C922"/>
         <TextBox x:Name="txbPrecioVenta" Grid.Column="3" Grid.Row="1" Margin="0,3,10,28" Background="#FF151313" Foreground="#FF4DBF22"/>
-        <ComboBox Grid.Column="3" Margin="0,0,10,23" Grid.Row="2" Background="#FF080808" BorderBrush="#FF0C0C0C" Foreground="#FFA82323" />
-        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="4" Margin="84,0,10,57" FontSize="8" Foreground="#FF20D330">
+        <ComboBox x:Name="cbxCategoria" Grid.Column="3" Margin="0,0,10,23" Grid.Row="2" Background="#FF080808" BorderBrush="#FF0C0C0C" Foreground="#FFA82323" />
+        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="4" Margin="84,0,10,57" FontSize="8" Foreground="#FF20D330" Click="btnNuevo_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/nuevo.png"/>
             </Button.Background>
@@ -61,7 +61,7 @@
                 <ImageBrush ImageSource="Imagenes/cancelar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnRegresar" Grid.Row="5" Margin="11,84,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="3">
+        <Button x:Name="btnRegresar" Grid.Row="5" Margin="11,84,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="3" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>

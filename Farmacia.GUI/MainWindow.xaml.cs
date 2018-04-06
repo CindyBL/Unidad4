@@ -24,5 +24,37 @@ namespace Farmacia.GUI
         {
             InitializeComponent();
         }
+
+        private void btnProductos_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Productos elegir = new Productos();
+            elegir.Owner = this;
+            elegir.Show();
+        }
+
+        private void btnEmpleados_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Empleados elegir = new Empleados();
+            elegir.Owner = this;
+            elegir.Show();
+        }
+
+        private void btnClientes_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Cliente elegir = new Cliente();
+            elegir.Owner = this;
+            elegir.Show();
+        }
+
+        private void btnVentas_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Venta elegir = new Venta();
+            elegir.Owner = this;
+            elegir.Show();
+        }
     }
 }

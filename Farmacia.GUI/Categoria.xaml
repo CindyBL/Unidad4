@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Farmacia.GUI"
         mc:Ignorable="d"
-        Title="Categoria" Height="300" Width="300">
+        Title="Categoria" Height="391" Width="525">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/fondo1.png"/>
@@ -21,16 +21,8 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="1" Grid.Row="0" Margin="12,47,10,26" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold">Nombre:</TextBlock>
-        <TextBox x:Name="txbNombreCategoria" Grid.Column="1" Grid.Row="0" Margin="72,44,1,23" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" TextChanged="txbNombreCategoria_TextChanged" Grid.ColumnSpan="2">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
+        <TextBlock Grid.Column="1" Grid.Row="0" Margin="10,56,65,36" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold">Nombre:</TextBlock>
+        <TextBox x:Name="txbNombreCategoria" Grid.Column="1" Grid.Row="0" Margin="69,51,72,36" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" TextChanged="txbNombreCategoria_TextChanged" Grid.ColumnSpan="2">
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -38,37 +30,37 @@
                 </LinearGradientBrush>
             </TextBox.Background>
         </TextBox>
-        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="1" Margin="40,0,10,64" FontSize="8" Foreground="#FF20D330">
+        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="1" Margin="86,0,10,96" FontSize="8" Foreground="#FF20D330" Click="btnNuevo_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/nuevo.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnEditar" Grid.Column="2" Grid.Row="1" Margin="63,0,62,64" FontSize="8" Foreground="#FF20D330" Grid.ColumnSpan="2">
+        <Button x:Name="btnEditar" Grid.Column="2" Grid.Row="1" Margin="120,0,105,96" FontSize="8" Foreground="#FF20D330" Grid.ColumnSpan="2" Click="btnEditar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/editar.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnGuardar" Grid.Column="3" Grid.Row="1" Margin="11,0,40,64" FontSize="8" Foreground="#FF20D330">
+        <Button x:Name="btnGuardar" Grid.Column="3" Grid.Row="1" Margin="24,0,69,96" FontSize="8" Foreground="#FF20D330">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/guardar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnEliminar" Grid.Column="3" Grid.Row="1" Margin="33,0,18,64" FontSize="8" Foreground="#FF20D330">
+        <Button x:Name="btnEliminar" Grid.Column="3" Grid.Row="1" Margin="60,0,32,96" FontSize="8" Foreground="#FF20D330">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/eliminar.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnCancelar" Grid.Column="3" Grid.Row="1" Margin="55,0,0,64" FontSize="8" Foreground="#FF20D330">
+        <Button x:Name="btnCancelar" Grid.Column="3" Grid.Row="1" Margin="97,0,0,96" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="1.286,0.417">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/cancelar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnRegresar" Grid.Row="2" Margin="11,64,-8,0" RenderTransformOrigin="0.5,0.5" Grid.Column="3" BorderBrush="#FF9E5151" Foreground="#FFB82929">
+        <Button x:Name="btnRegresar" Grid.Row="2" Margin="43,84,-8,0" RenderTransformOrigin="0.5,0.5" Grid.Column="3" BorderBrush="#FF9E5151" Foreground="#FFB82929" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="dtgCategoria" Grid.ColumnSpan="4" Margin="54,38,47,25" Grid.Row="1" Foreground="#FF38AC0D" Grid.RowSpan="2">
+        <DataGrid x:Name="dtgCategoria" Grid.ColumnSpan="4" Margin="54,38,101,46" Grid.Row="1" Foreground="#FF38AC0D" Grid.RowSpan="2">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

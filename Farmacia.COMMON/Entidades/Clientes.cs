@@ -4,8 +4,10 @@ using System.Text;
 
 namespace Farmacia.COMMON.Entidades
 {
-    public class Clientes:Persona
+    public class Clientes:Base
     {
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
         public string RFC { get; set; }
         public string Correo { get; set; }
         public string Direccion { get; set; }

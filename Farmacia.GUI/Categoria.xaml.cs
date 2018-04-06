@@ -22,9 +22,45 @@ namespace Farmacia.GUI
         public Categoria()
         {
             InitializeComponent();
+            HabilitarCajas(false);
+            HabilitarBotones(true);
+        }
+
+        private void HabilitarCajas(bool habilitadas)
+        {
+            txbNombreCategoria.Clear();
+            txbNombreCategoria.IsEnabled = habilitadas;
+        }
+
+        private void HabilitarBotones(bool habilitados)
+        {
+            btnNuevo.IsEnabled = habilitados;
+            btnEliminar.IsEnabled = habilitados;
+            btnEditar.IsEnabled = habilitados;
+            btnGuardar.IsEnabled = !habilitados;
+            btnCancelar.IsEnabled = !habilitados;
         }
 
         private void txbNombreCategoria_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click(object sender, RoutedEventArgs e)
+        {
+            HabilitarCajas(true);
+            HabilitarBotones(false);
+        }
+
+        private void btnRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Productos elegir = new Productos();
+            elegir.Owner = this;
+            elegir.Show();
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
 
         }
