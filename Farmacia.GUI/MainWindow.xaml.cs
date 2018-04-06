@@ -56,5 +56,10 @@ namespace Farmacia.GUI
             elegir.Owner = this;
             elegir.Show();
         }
+
+        private void btnCerrar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

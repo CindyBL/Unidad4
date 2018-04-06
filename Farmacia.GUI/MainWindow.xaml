@@ -54,5 +54,13 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Button x:Name="btnCerrar" Content="Cerrar" Grid.Column="2" Grid.Row="2" Margin="71,71,10,10" Foreground="#FF3FE41A" Click="btnCerrar_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF726565" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
