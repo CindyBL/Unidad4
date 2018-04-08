@@ -8,10 +8,10 @@ using LiteDB;
 
 namespace Farmacia.DAL
 {
-    class RepositorioDeProducto : IRepositorio<Producto>
+    public class RepositorioDeProducto : IRepositorio<Producto>
     {
         private string DBName = "Inventario.db";
-        private string TableName = "Producto";
+        private string TableName = "Productos";
         public List<Producto> Read
         {
             get
@@ -42,6 +42,7 @@ namespace Farmacia.DAL
                 return false;
             }
         }
+
 
         public bool Delete(string id)
         {

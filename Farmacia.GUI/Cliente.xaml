@@ -22,47 +22,47 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Foreground="#FF6ACF15" Margin="10,0,0,0" FontSize="16">Nombre:</Label>
         <Label Grid.Column="0" Grid.Row="1" Foreground="#FF63BF17" Margin="31,0,5,0" FontSize="16">RFC:</Label>
-        <Label Grid.Column="0" Grid.Row="2" Foreground="#FF7EDC30" Margin="22,0,0,0" FontSize="16">Correo:</Label>
+        <Label Grid.Column="0" Grid.Row="2" Foreground="#FF7EDC30" Margin="22,0,0,293" FontSize="16">Correo:</Label>
         <Label Grid.Column="2" Grid.Row="1" Foreground="#FF67C31A" Margin="10,0,0,0" FontSize="16">Direccion:</Label>
-        <Label Grid.Column="2" Grid.Row="2" Foreground="#FF53A012" Margin="15,0,0,0" FontSize="16">Telefono:</Label>
+        <Label Grid.Column="2" Grid.Row="2" Foreground="#FF53A012" Margin="15,0,0,293" FontSize="16">Telefono:</Label>
         <TextBox x:Name="txbNombre" Grid.Column="1" Grid.Row="0" Foreground="#FF40D315" Background="#FF191818" FontSize="16"></TextBox>
         <TextBox x:Name="txbRFC" Grid.Column="1" Grid.Row="1" Foreground="#FF40B81D" Background="#FF171717" FontSize="16"></TextBox>
-        <TextBox x:Name="txbCorreo" Grid.Column="1" Grid.Row="2" Foreground="#FF3DC514" Background="#FF0E0D0D" FontSize="16"></TextBox>
+        <TextBox x:Name="txbCorreo" Grid.Column="1" Grid.Row="2" Foreground="#FF3DC514" Background="#FF0E0D0D" FontSize="16" Margin="0,0,0,299"></TextBox>
         <TextBox x:Name="txbDireccion" Grid.Column="3" Grid.Row="1" Foreground="#FF42C51B" Background="#FF191818" FontSize="16"/>
-        <TextBox x:Name="txbTelefono" Grid.Column="3" Grid.Row="2" Foreground="#FF3AA21B" Background="#FF0F0F0F" FontSize="16"/>
+        <TextBox x:Name="txbTelefono" Grid.Column="3" Grid.Row="2" Foreground="#FF3AA21B" Background="#FF0F0F0F" FontSize="16" Margin="0,0,0,299"/>
         <Label Grid.Column="2" Grid.Row="0" Foreground="#FF6ACF15" Margin="9,0,0,0" FontSize="16" Content="Apellido:"/>
         <TextBox x:Name="txbApellido" Grid.Column="3" Grid.Row="0" Foreground="#FF40D315" Background="#FF191818" FontSize="16"/>
-        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="3" Margin="64,5,0,247" FontSize="8" Foreground="#FF20D330" HorizontalAlignment="Left" Width="42" Grid.RowSpan="2" Click="btnNuevo_Click">
+        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="2" Margin="93,74,0,223" FontSize="8" Foreground="#FF20D330" HorizontalAlignment="Left" Width="33" Click="btnNuevo_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/nuevo.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnEditar" Grid.Column="2" Grid.Row="3" Margin="106,5,130,247" FontSize="8" Foreground="#FF20D330" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <Button x:Name="btnEditar" Grid.Column="2" Grid.Row="2" Margin="126,74,110,223" FontSize="8" Foreground="#FF20D330" Click="btnEditar_Click" Grid.ColumnSpan="2">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/editar.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnGuardar" Grid.Column="3" Grid.Row="3" Margin="5,5,86,247" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="0.103,0.608" Grid.RowSpan="2">
+        <Button x:Name="btnGuardar" Grid.Column="3" Grid.Row="2" Margin="23,74,74,223" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="0.103,0.608" Click="btnGuardar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/guardar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnEliminar" Grid.Column="3" Grid.Row="3" Margin="49,5,44,247" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="-0.009,0.5" Grid.RowSpan="2">
+        <Button x:Name="btnEliminar" Grid.Column="3" Grid.Row="2" Margin="61,74,39,223" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="-0.009,0.5" Click="btnEliminar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/eliminar.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnCancelar" Grid.Column="3" Grid.Row="3" Margin="91,6,2,247" FontSize="8" Foreground="#FF20D330" Grid.RowSpan="2">
+        <Button x:Name="btnCancelar" Grid.Column="3" Grid.Row="2" Margin="96,74,0,223" FontSize="8" Foreground="#FF20D330" Click="btnCancelar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/cancelar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnRegresar" Grid.Row="4" Margin="11,229,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="3" Click="btnRegresar_Click">
+        <Button x:Name="btnRegresar" Grid.Row="2" Margin="23,293,-12,16" RenderTransformOrigin="0.5,0.5" Grid.Column="3" Click="btnRegresar_Click" Grid.RowSpan="2">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="dtgCliente" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" Margin="74,51,86,75" Foreground="#FF59B818">
+        <DataGrid x:Name="dtgCliente" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Margin="86,138,74,45" Foreground="#FF59B818" IsReadOnly="True">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -70,6 +70,7 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
         </DataGrid>
-
+        <TextBlock Grid.Column="2" Grid.Row="2" Margin="71,37,130,266" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23" Grid.ColumnSpan="2">Id:</TextBlock>
+        <TextBlock x:Name="txbClientesId" Grid.Column="3" Grid.Row="2" Margin="0,31,0,272"/>
     </Grid>
 </Window>
