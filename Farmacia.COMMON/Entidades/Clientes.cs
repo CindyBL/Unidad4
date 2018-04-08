@@ -12,5 +12,9 @@ namespace Farmacia.COMMON.Entidades
         public string Correo { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
+        public override string ToString()
+        {
+            return string.Format("{0} {1}", Nombre, Apellido);
+        }
     }
 }

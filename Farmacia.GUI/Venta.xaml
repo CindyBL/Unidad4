@@ -25,34 +25,32 @@
         <Label Grid.Column="0" Grid.Row="1" Background="{x:Null}" Foreground="#FF56BB1D" FontSize="16">Nombre:</Label>
         <Label Grid.Column="0" Grid.Row="2" Foreground="#FF57C916" FontSize="16" Background="{x:Null}">Producto:</Label>
         <Label Grid.Column="0" Grid.Row="3" Foreground="#FF50B616" FontSize="16" Background="{x:Null}">N° Empleado:</Label>
-        <Label Grid.Column="2" Grid.Row="1" Foreground="#FF55C913" FontSize="16" Background="{x:Null}">Precio:</Label>
-        <Label Grid.Column="2" Grid.Row="2" Foreground="#FF4BB40F" FontSize="16" Background="{x:Null}">Cantidad:</Label>
+        <Label Grid.Column="2" Foreground="#FF4BB40F" FontSize="16" Background="{x:Null}" Margin="48,0,5,8" Grid.Row="1">Cantidad:</Label>
         <ComboBox x:Name="cmbNombre" Grid.Column="1" Grid.Row="1" Height="39" VerticalAlignment="Top" FontSize="16" Background="{x:Null}"/>
         <ComboBox x:Name="cmbProducto" Grid.Column="1" Grid.Row="2" BorderBrush="#FF665656" FontSize="16" Background="{x:Null}"/>
         <ComboBox x:Name="cmbEmpleado" Grid.Column="1" Grid.Row="3" BorderBrush="#FF594848" FontSize="16" Background="Black" Height="31" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="txtPrecio" Grid.Column="3" Grid.Row="1" Background="Black" Foreground="#FF43C114" FontSize="16"></TextBox>
-        <TextBox x:Name="txtCantidad" Grid.Column="3" Grid.Row="2" Background="Black" Foreground="#FF3FC50D" FontSize="22"></TextBox>
-        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="4" Margin="48,10,38,286" FontSize="8" Foreground="#FF20D330">
+        <TextBox x:Name="txtCantidad" Grid.Column="3" Grid.Row="1" Background="Black" Foreground="#FF3FC50D" FontSize="22" Margin="0,0,10,8"></TextBox>
+        <Button x:Name="btnNuevo" Grid.Column="2" Grid.Row="4" Margin="48,10,38,286" FontSize="8" Foreground="#FF20D330" Click="btnNuevo_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/nuevo.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnEditar" Grid.Column="2" Grid.Row="4" Margin="91,10,0,286" FontSize="8" Foreground="#FF20D330">
+        <Button x:Name="btnEditar" Grid.Column="2" Grid.Row="4" Margin="91,10,0,286" FontSize="8" Foreground="#FF20D330" Click="btnEditar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/editar.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnGuardar" Grid.Column="3" Grid.Row="4" Margin="0,10,92,286" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="0.103,0.608">
+        <Button x:Name="btnGuardar" Grid.Column="3" Grid.Row="4" Margin="0,10,92,286" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="0.5,0.5" Click="btnGuardar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/guardar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnEliminar" Grid.Column="3" Grid.Row="4" Margin="37,10,56,286" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="-0.009,0.5">
+        <Button x:Name="btnEliminar" Grid.Column="3" Grid.Row="4" Margin="37,10,56,286" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="-0.009,0.5" Click="btnEliminar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/eliminar.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnCancelar" Grid.Column="3" Grid.Row="4" Margin="72,10,10,286" FontSize="8" Foreground="#FF20D330">
+        <Button x:Name="btnCancelar" Grid.Column="3" Grid.Row="4" Margin="72,10,10,286" FontSize="8" Foreground="#FF20D330" Click="btnCancelar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/cancelar.png"/>
             </Button.Background>
@@ -62,12 +60,7 @@
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
         </Button>
-        <DataGrid Grid.ColumnSpan="2" Margin="10,86,106,97" Grid.Row="4"></DataGrid>
-        <Label Grid.Column="2" Grid.Row="4" Margin="68,164,10,113" RenderTransformOrigin="0.5,0.5" Foreground="#FF5AC91A" FontSize="16" Background="{x:Null}">IVA:
-        </Label>
-        <TextBox x:Name="txtIVA" Grid.Column="3" Grid.Row="4" Margin="10,164,10,125" Foreground="#FF44C513" Background="Black" FontSize="16"/>
-        <Button Content="Agregar Producto" x:Name="btnAddProducto" Grid.Column="0" Grid.Row="4" Margin="8,237,98,45" Foreground="#FF50C110" FontSize="16" Background="{x:Null}" Grid.ColumnSpan="2"/>
-        <Button Content="Calcular Total" x:Name="btnCalcularTotal" Grid.Column="2" Grid.Row="4" Margin="10,234,0,45" Foreground="#FF60D31F" FontSize="16" Background="{x:Null}"/>
-        <TextBox x:Name="txtTotal" Grid.Column="3" Grid.Row="4" Margin="10,237,4,53" Foreground="#FF4FC323" Background="Black" FontSize="16" />
+        <DataGrid x:Name="dtgTicket" Grid.ColumnSpan="2" Margin="0,87,10,75" Grid.Row="4" Grid.Column="2" IsReadOnly="True"></DataGrid>
+        <Button Content="Agregar Producto" x:Name="btnAddProducto" Grid.Column="0" Grid.Row="4" Margin="0,21,0,261" Foreground="#FF50C110" FontSize="16" Background="{x:Null}" Click="btnAddProducto_Click"/>
     </Grid>
 </Window>

@@ -31,11 +31,13 @@ namespace Farmacia.GUI
         }
 
         IManejadorProducto manejadorProducto;
+        IManejadorCategorias manejadorCategorias;
         accion accionProducto;
         public NuevoProducto()
         {
             InitializeComponent();
             manejadorProducto = new ManejadorDeProducto(new RepositorioDeProducto());
+            manejadorCategorias = new ManejadorDeCategorias(new RepositorioDeCategorias());
             HabilitarCajas(false);
             HabilitarBotones(true);
             ActualizarTabla();
@@ -60,6 +62,8 @@ namespace Farmacia.GUI
             txbPrecioVenta.IsEnabled = habilitadas;
             txbPresentacion.IsEnabled = habilitadas;
             cbxCategoria.IsEnabled = habilitadas;
+            cbxCategoria.ItemsSource = null;
+            cbxCategoria.ItemsSource = manejadorCategorias.Listar;
         }
 
         private void HabilitarBotones(bool habilitados)
@@ -98,6 +102,7 @@ namespace Farmacia.GUI
                 txbPrecioCompra.Text = pro.PrecioCompra;
                 txbPrecioVenta.Text = pro.PrecioVenta;
                 txbPresentacion.Text = pro.Presentacion;
+                cbxCategoria.Text = pro.Categoria;
                 accionProducto = accion.Editar;
                 HabilitarBotones(false);
             }
@@ -145,6 +150,7 @@ namespace Farmacia.GUI
                     PrecioCompra=txbPrecioCompra.Text,
                     PrecioVenta=txbPrecioVenta.Text,
                     Presentacion=txbPresentacion.Text,
+                    Categoria=cbxCategoria.Text,
                 };
                 if (manejadorProducto.Agregar(pro))
                 {
@@ -166,6 +172,7 @@ namespace Farmacia.GUI
                 pro.PrecioCompra = txbPrecioCompra.Text;
                 pro.PrecioVenta = txbPrecioVenta.Text;
                 pro.Presentacion = txbPresentacion.Text;
+                pro.Categoria = cbxCategoria.Text;
                 if (manejadorProducto.Modificar(pro))
                 {
                     MessageBox.Show("Producto modificado correctamente", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Information);
