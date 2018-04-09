@@ -8,7 +8,7 @@
         Title="NuevoProducto" Height="415.278" Width="515.278">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Imagenes/fondoFarmacia.png"/>
+            <ImageBrush ImageSource="Imagenes/fondo1.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" MinHeight="51"/>
@@ -24,12 +24,12 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0" Grid.Row="0" Margin="66,8,0,20" Foreground="#FF66B815">Nombre:</Label>
-        <Label Grid.Column="0" Margin="37,52,0,30" Foreground="#FF6DCB0F" Grid.RowSpan="2">Precio compra:</Label>
-        <Label Grid.Column="0" Grid.Row="2" Margin="47,0,0,28" Foreground="#FF72CD17">Presentacion:</Label>
-        <Label Grid.Column="2" Grid.Row="0" Margin="44,13,5,15" Foreground="#FF6CBF18">Descrepcion:</Label>
-        <Label Grid.Column="2" Grid.Row="1" Margin="46,0,0,28" Foreground="#FF79E012">Precio venta:</Label>
-        <Label Grid.Column="2" Grid.Row="2" Margin="56,0,5,299" Foreground="#FF60AA16">Categoria:</Label>
+        <Label Grid.Column="0" Grid.Row="0" Margin="66,8,0,20" Foreground="#FF66B815" Background="White">Nombre:</Label>
+        <Label Grid.Column="0" Margin="37,52,0,30" Foreground="#FF6DCB0F" Grid.RowSpan="2" Background="White">Precio compra:</Label>
+        <Label Grid.Column="0" Grid.Row="2" Margin="47,0,0,299" Foreground="#FF72CD17" Background="White">Presentacion:</Label>
+        <Label Grid.Column="2" Grid.Row="0" Margin="44,13,5,15" Foreground="#FF6CBF18" Background="White">Descrepcion:</Label>
+        <Label Grid.Column="2" Grid.Row="1" Margin="46,0,0,28" Foreground="#FF79E012" Background="White">Precio venta:</Label>
+        <Label Grid.Column="2" Grid.Row="2" Margin="56,0,5,299" Foreground="#FF60AA16" Background="White">Categoria:</Label>
         <TextBox x:Name="txbNombre" Grid.Column="1" Grid.Row="0" Margin="0,13,10,15" Background="#FF151515" Foreground="#FF45C914"/>
         <TextBox x:Name="txbPrecioCompra" Grid.Column="1" Grid.Row="1" Margin="0,0,10,28" Background="#FF1B1A1A" Foreground="#FF4ABB20"/>
         <TextBox x:Name="txbPresentacion" Grid.Column="1" Grid.Row="2" Margin="0,0,10,299" Background="#FF0F0E0E" Foreground="#FF48BD1C"/>
@@ -61,7 +61,7 @@
                 <ImageBrush ImageSource="Imagenes/cancelar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnRegresar" Grid.Row="2" Margin="7,240,4,49" RenderTransformOrigin="0.5,0.5" Grid.Column="3" Click="btnRegresar_Click">
+        <Button x:Name="btnRegresar" Grid.Row="2" Margin="7,230,4,59" RenderTransformOrigin="0.5,0.5" Grid.Column="3" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
@@ -74,7 +74,7 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
         </DataGrid>
-        <TextBlock Grid.Row="2" Margin="89,43,10,260" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23">Id:</TextBlock>
-        <TextBlock x:Name="txbProductoId" Grid.Row="2" Margin="0,44,0,265" Grid.Column="1"/>
+        <TextBlock Grid.Row="2" Margin="89,43,10,260" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23" Background="#FFF1E9E9">Id:</TextBlock>
+        <TextBlock x:Name="txbProductoId" Grid.Row="2" Margin="0,44,0,265" Grid.Column="1" Background="Black" Foreground="#FF1BEA1B"/>
     </Grid>
 </Window>

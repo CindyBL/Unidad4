@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Venta" Height="479.167" Width="523.611">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Imagenes/fondo1.png"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -22,11 +25,11 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <DatePicker x:Name="dtpFecha" Grid.Column="3" Grid.Row="0"></DatePicker>
-        <Label Grid.Column="0" Grid.Row="1" Background="{x:Null}" Foreground="#FF56BB1D" FontSize="16">Nombre:</Label>
-        <Label Grid.Column="0" Grid.Row="2" Foreground="#FF57C916" FontSize="16" Background="{x:Null}">Producto:</Label>
-        <Label Grid.Column="0" Grid.Row="3" Foreground="#FF50B616" FontSize="16" Background="{x:Null}">N° Empleado:</Label>
-        <Label Grid.Column="2" Foreground="#FF4BB40F" FontSize="16" Background="{x:Null}" Margin="48,0,5,8" Grid.Row="1">Cantidad:</Label>
-        <ComboBox x:Name="cmbNombre" Grid.Column="1" Grid.Row="1" Height="39" VerticalAlignment="Top" FontSize="16" Background="{x:Null}"/>
+        <Label Grid.Column="0" Grid.Row="1" Background="White" Foreground="#FF56BB1D" FontSize="16" Margin="45,5,0,0">Nombre:</Label>
+        <Label Grid.Column="0" Grid.Row="2" Foreground="#FF57C916" FontSize="16" Background="White" Margin="45,0,0,0" RenderTransformOrigin="1.005,0.406">Producto:</Label>
+        <Label Grid.Column="0" Grid.Row="3" Foreground="#FF50B616" FontSize="16" Background="White" Margin="25,0,0,0">N° Empleado:</Label>
+        <Label Grid.Column="2" Foreground="#FF4BB40F" FontSize="16" Background="White" Margin="48,0,5,8" Grid.Row="1">Cantidad:</Label>
+        <ComboBox x:Name="cmbNombre" Grid.Column="1" Grid.Row="1" Height="34" VerticalAlignment="Top" FontSize="16" Background="{x:Null}" Margin="0,5,0,0"/>
         <ComboBox x:Name="cmbProducto" Grid.Column="1" Grid.Row="2" BorderBrush="#FF665656" FontSize="16" Background="{x:Null}"/>
         <ComboBox x:Name="cmbEmpleado" Grid.Column="1" Grid.Row="3" BorderBrush="#FF594848" FontSize="16" Background="Black" Height="31" VerticalAlignment="Bottom"/>
         <TextBox x:Name="txtCantidad" Grid.Column="3" Grid.Row="1" Background="Black" Foreground="#FF3FC50D" FontSize="22" Margin="0,0,10,8"></TextBox>
@@ -55,7 +58,7 @@
                 <ImageBrush ImageSource="Imagenes/cancelar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnRegresar" Grid.Row="4" Margin="0,275,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="3" Height="48" VerticalAlignment="Top" Click="btnRegresar_Click">
+        <Button x:Name="btnRegresar" Grid.Row="4" Margin="0,265,0,0" RenderTransformOrigin="0.5,0.5" Grid.Column="3" Height="48" VerticalAlignment="Top" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>

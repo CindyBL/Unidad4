@@ -29,40 +29,28 @@ namespace Farmacia.GUI
             Nuevo,
             Editar
         }
-        IManejadorTicket ManejadorDeTicket;
-        IManejadorClientes ManejadorDeClientes;
-        IManejadorProducto ManejadorDeProducto;
-        IManejadorEmpleado ManejadorDeEmpleado;
+        IManejadorTicket manejadorTicket;
+        IManejadorClientes manejadorClientes;
+        IManejadorProducto manejadorProducto;
+        IManejadorEmpleado manejadorEmpleado;
         Ticket ticket;
         accion accionTicket;
         public Venta()
         {
             InitializeComponent();
-            ManejadorDeTicket = new ManejadorDeTicket(new RepositorioDeTicket());
-            ManejadorDeClientes = new ManejadorDeClientes(new RepositorioClientes());
-            ManejadorDeProducto = new ManejadorDeProducto(new RepositorioDeProducto());
-            ManejadorDeEmpleado = new ManejadorDeEmpleado(new RepositorioEmpleado());
+            manejadorTicket = new ManejadorDeTicket(new RepositorioDeTicket());
+            manejadorClientes = new ManejadorDeClientes(new RepositorioClientes());
+            manejadorProducto = new ManejadorDeProducto(new RepositorioDeProducto());
+            manejadorEmpleado = new ManejadorDeEmpleado(new RepositorioEmpleado());
             HabilitarCajas(false);
             HabilitarBotones(true);
             actualizarTabla();
         }
 
-        private void actializarCombos()
-        {
-            cmbNombre.ItemsSource = null;
-            cmbNombre.ItemsSource = ManejadorDeClientes.Listar;
-
-            cmbProducto.ItemsSource = null;
-            cmbProducto.ItemsSource = ManejadorDeProducto.Listar;
-
-            cmbEmpleado.ItemsSource = null;
-            cmbEmpleado.ItemsSource = ManejadorDeEmpleado.Listar;
-        }
-
         private void actualizarTabla()
         {
             dtgTicket.ItemsSource = null;
-            dtgTicket.ItemsSource = ManejadorDeTicket.Listar;
+            dtgTicket.ItemsSource = manejadorTicket.Listar;
         }
 
         private void btnRegresar_Click(object sender, RoutedEventArgs e)
@@ -74,6 +62,13 @@ namespace Farmacia.GUI
         }
         private void HabilitarCajas(bool habilitadas)
         {
+            cmbNombre.ItemsSource = null;
+            cmbNombre.ItemsSource = manejadorClientes.Listar;
+            cmbProducto.ItemsSource = null;
+            cmbProducto.ItemsSource = manejadorProducto.Listar;
+            cmbEmpleado.ItemsSource = null;
+            cmbEmpleado.ItemsSource = manejadorEmpleado.Listar;
+            txtCantidad.Clear();
             cmbNombre.IsEnabled = habilitadas;
             cmbProducto.IsEnabled = habilitadas;
             cmbEmpleado.IsEnabled = habilitadas;
@@ -92,27 +87,27 @@ namespace Farmacia.GUI
         {
             HabilitarCajas(true);
             HabilitarBotones(false);
-            actializarCombos();
             accionTicket = accion.Nuevo;
-            //actualizarListaDeProductos();
 
         }
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
-            Ticket emp = dtgTicket.SelectedItem as Ticket;
-            if (emp != null)
+            Ticket pro = dtgTicket.SelectedItem as Ticket;
+            if (pro != null)
             {
                 HabilitarCajas(true);
-                cmbNombre.SelectedItem= emp.Cliente;
-                cmbEmpleado.Text = emp.Encargado;
-                txtCantidad.Text = emp.cantidad;
-                accionTicket= accion.Editar;
+                cmbNombre.Text = pro.Cliente;
+                cmbProducto.Text = pro.Productos;
+                cmbEmpleado.Text = pro.Encargado;
+                txtCantidad.Text = pro.cantidad;
+                dtpFecha.SelectedDate = pro.FechaHora;
+                accionTicket = accion.Editar;
                 HabilitarBotones(false);
             }
             else
             {
-                MessageBox.Show("Seleccione el empleado que desea editar", "Empleados", MessageBoxButton.OK, MessageBoxImage.Question);
+                MessageBox.Show("Seleccione la venta que desea editar", "Productos", MessageBoxButton.OK, MessageBoxImage.Question);
             }
         }
 
@@ -131,38 +126,46 @@ namespace Farmacia.GUI
         {
             if (accionTicket == accion.Nuevo)
             {
-                ticket.Cliente = cmbNombre.SelectedItem as Clientes;
-                ticket.Encargado = cmbEmpleado.SelectedItem as Empleado;
-                ticket.FechaHora = dtpFecha.SelectedDate.Value;
-                if (ManejadorDeTicket.Agregar(ticket))
+                Ticket pro = new Ticket()
                 {
-                    MessageBox.Show("compra hecha con exito", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Information);
+                   Cliente=cmbNombre.Text,
+                   FechaHora=dtpFecha.SelectedDate.Value,
+                   Productos=cmbProducto.Text,
+                   Encargado=cmbEmpleado.Text,
+                   cantidad=txtCantidad.Text,
+                   Total=txtCantidad.Text,
+                };
+                if (manejadorTicket.Agregar(pro))
+                {
+                    MessageBox.Show("La venta se ha realizado exitosamente", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Information);
                     actualizarTabla();
                     HabilitarBotones(true);
                     HabilitarCajas(false);
                 }
                 else
                 {
-                    MessageBox.Show("La venta no se pudo realizar", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("La venta no se ha podido realizar", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
             {
                 Ticket pro = dtgTicket.SelectedItem as Ticket;
-                pro.Cliente = cmbNombre.SelectedItem as Clientes;
-                pro.Encargado = cmbEmpleado.SelectedItem as Empleado;
-                pro.Productos = cmbProducto.SelectedItem as Producto;
-                pro.FechaHora = dtpFecha.SelectedDate.Value;
-                if (ManejadorDeTicket.Modificar(pro))
+                //pro.Cliente = cmbNombre.Text;
+                //pro.FechaHora = dtpFecha.SelectedDate.Value;
+                //pro.Productos = cmbProducto.Text;
+                //pro.Encargado = cmbEmpleado.Text;
+                pro.cantidad = txtCantidad.Text;
+                pro.Total = txtCantidad.Text;
+                if (manejadorTicket.Modificar(pro))
                 {
-                    MessageBox.Show("la compra fue modificado correctamente", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Producto modificado correctamente", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Information);
                     actualizarTabla();
                     HabilitarBotones(true);
                     HabilitarCajas(false);
                 }
                 else
                 {
-                    MessageBox.Show("la compra no se pudo actualizar", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El producto no se pudo actualizar", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -180,28 +183,18 @@ namespace Farmacia.GUI
             {
                 if (MessageBox.Show("Realmente deseas eliminar esta venta?", "Farmacia", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
-                    if (ManejadorDeTicket.Eliminar(pro.Id))
+                    if (manejadorTicket.Eliminar(pro.Id))
                     {
                         MessageBox.Show("La venta ha sido eliminado correctamente", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Information);
                         actualizarTabla();
                     }
                     else
                     {
-                        MessageBox.Show("El producto no se pudo eliminar", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("La venta no se pudo eliminar", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
 
                 }
             }
         }
-
-        ///ticket.Cliente = cmbNombre.SelectedItem as Clientes;
-        //        ticket.Encargado = cmbEmpleado.SelectedItem as Empleado;
-        //        ticket.FechaHora = dtpFecha.SelectedDate.Value;
-
-        //    Ticket pro = dtgTicket.SelectedItem as Ticket;
-        //pro.Cliente = cmbNombre.SelectedItem as Clientes;
-        //        pro.Encargado = cmbEmpleado.SelectedItem as Empleado;
-        //        pro.Productos = cmbProducto.SelectedItem as Producto;
-        //        pro.FechaHora = dtpFecha.SelectedDate.Value;
     }
 }

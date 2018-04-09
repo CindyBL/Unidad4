@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:Farmacia.GUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid Background="#FFEEDFDF">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Imagenes/fondoprincipal.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -22,7 +25,7 @@
                 <ImageBrush ImageSource="Imagenes/farmacia.jpg"/>
             </Label.Background>
         </Label>
-        <Button  Content="Productos" x:Name="btnProductos" Grid.Column="0" Grid.Row="1" Margin="77,38,0,46" Foreground="#FF07E211" Click="btnProductos_Click">
+        <Button  Content="Productos" x:Name="btnProductos" Grid.Column="0" Grid.Row="1" Margin="56,38,0,32" Foreground="#FF07E211" Click="btnProductos_Click" FontSize="18">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -30,7 +33,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Empleados" x:Name="btnEmpleados" Grid.Column="1" Grid.Row="1" Margin="45,38,41,46" Foreground="#FF2CDA24" Click="btnEmpleados_Click">
+        <Button Content="Empleados" x:Name="btnEmpleados" Grid.Column="1" Grid.Row="1" Margin="45,38,28,32" Foreground="#FF2CDA24" Click="btnEmpleados_Click" FontSize="18">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -38,7 +41,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Clientes" x:Name="btnClientes" Grid.Column="2" Grid.Row="1" Margin="0,38,93,46" Foreground="#FF3FE41A" Click="btnClientes_Click">
+        <Button Content="Clientes" x:Name="btnClientes" Grid.Column="2" Grid.Row="1" Margin="0,38,66,32" Foreground="#FF3FE41A" Click="btnClientes_Click" FontSize="18">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -46,7 +49,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Ventas" x:Name="btnVentas" Grid.Column="1" Grid.Row="2" Margin="45,0,41,82" Foreground="#FF5ECB20" Click="btnVentas_Click">
+        <Button Content="Ventas" x:Name="btnVentas" Grid.Column="1" Grid.Row="2" Margin="45,0,28,72" Foreground="#FF5ECB20" Click="btnVentas_Click" FontSize="18">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -54,7 +57,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnCerrar" Content="Cerrar" Grid.Column="2" Grid.Row="2" Margin="71,71,10,10" Foreground="#FF3FE41A" Click="btnCerrar_Click" >
+        <Button x:Name="btnCerrar" Content="Cerrar" Grid.Column="2" Grid.Row="2" Margin="68,65,10,10" Foreground="#FF3FE41A" Click="btnCerrar_Click" FontSize="18" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

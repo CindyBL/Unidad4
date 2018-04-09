@@ -68,7 +68,7 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
         </DataGrid>
-        <TextBlock Grid.Column="2" Margin="106,51,0,46" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23">Id:</TextBlock>
-        <TextBlock x:Name="txbCategoriaId" Grid.Column="3" Margin="5,51,0,45"/>
+        <TextBlock Grid.Column="2" Margin="106,51,0,46" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23" Background="White">Id:</TextBlock>
+        <TextBlock x:Name="txbCategoriaId" Grid.Column="3" Margin="5,51,0,45" Background="Black" Foreground="#FF3BCB24"/>
     </Grid>
 </Window>

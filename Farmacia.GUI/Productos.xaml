@@ -8,7 +8,7 @@
         Title="Productos" Height="447.222" Width="381.944">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Imagenes/fondoFarmacia.png"/>
+            <ImageBrush ImageSource="Imagenes/fondoprincipal.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -33,7 +33,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnRegresar" Grid.Row="1" Margin="268,174,0,0" RenderTransformOrigin="0.5,0.5" Click="btnRegresar_Click">
+        <Button x:Name="btnRegresar" Grid.Row="1" Margin="268,164,0,10" RenderTransformOrigin="0.5,0.5" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
